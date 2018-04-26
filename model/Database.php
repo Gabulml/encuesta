@@ -39,7 +39,7 @@ class Database {
         // Una sola conexion para toda la aplicacion (singleton):
         if (null == self::$conexion) {
             try {
-                self::$conexion = new PDO("mysql:host=" . self::$dbHost . ";" . "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
+                self::$conexion = new PDO("postgresql:host=" . self::$dbHost . ";" . "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
             } catch (PDOException $e) {
                 die($e->getMessage());
             }
